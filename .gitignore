@@ -1,0 +1,16 @@
+# 依存関係・生成物（dist は GitHub Actions で毎回作る）
+node_modules/
+dist/
+
+# OS・エディタ
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# ログ・一時ファイル
+*.log
+npm-debug.log*
+*.tmp
+.tmp/

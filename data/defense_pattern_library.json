@@ -1,0 +1,404 @@
+{
+  "version": "1.0",
+  "description": "中学校バスケットボール部向け守備パターン・リファレンス。既存作戦盤へ再利用できる共通守備原則を整理。",
+  "usage_rules": [
+    "各パターンを既存戦術へ自動適用しない。",
+    "具体的な座標・STEPは資料または教師確認で登録する。",
+    "verified=true は出典確認済み。"
+  ],
+  "patterns": [
+    {
+      "id": "DEF-01",
+      "name": "マッチアップ・ボールポジション",
+      "category": "基本ポジショニング",
+      "scope": "U15",
+      "difficulty": 1,
+      "verified": true,
+      "purpose": "自分のマークマンとボールの両方を意識した基本位置を学ぶ。",
+      "trigger": [
+        "ハーフコート開始",
+        "ボールまたはマークマンの移動"
+      ],
+      "actions": [
+        "stay_in_matchup",
+        "adjust_to_ball"
+      ],
+      "source": [
+        {
+          "title": "JBA なぜマンツーマンが必要か？ 第5版",
+          "url": "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf",
+          "section": "pp.13-16"
+        },
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "1.1 Man to Man Defence"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-02",
+      "name": "1パスアウェイ・ディナイ",
+      "category": "オフボール",
+      "scope": "U15",
+      "difficulty": 1,
+      "verified": true,
+      "purpose": "ボールに近いオフボール選手へのパスを制限する。",
+      "trigger": [
+        "自分のマークマンが1パス距離"
+      ],
+      "actions": [
+        "deny"
+      ],
+      "source": [
+        {
+          "title": "JBA なぜマンツーマンが必要か？ 第5版",
+          "url": "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf",
+          "section": "pp.15-16"
+        },
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "1.1.3 Defending one pass away"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-03",
+      "name": "ヘルプポジション",
+      "category": "ヘルプ",
+      "scope": "U15",
+      "difficulty": 1,
+      "verified": true,
+      "purpose": "ヘルプサイドからボールマンへの対応準備をする。",
+      "trigger": [
+        "ヘルプサイド"
+      ],
+      "actions": [
+        "help_position"
+      ],
+      "source": [
+        {
+          "title": "JBA なぜマンツーマンが必要か？ 第5版",
+          "url": "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf",
+          "section": "pp.15-17"
+        },
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "1.1.7 Help defence - split line defence"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-04",
+      "name": "ヘルプ・アンド・リカバー",
+      "category": "ヘルプ",
+      "scope": "U15",
+      "difficulty": 2,
+      "verified": true,
+      "purpose": "ドライブやカットを一時的に助け、マッチアップへ戻る。",
+      "trigger": [
+        "ドライブ",
+        "リングへのカット"
+      ],
+      "actions": [
+        "help",
+        "recover"
+      ],
+      "source": [
+        {
+          "title": "JBA なぜマンツーマンが必要か？ 第5版",
+          "url": "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf",
+          "section": "pp.16-17"
+        },
+        {
+          "title": "FIBA WABC Coaching Manual Level 2",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-2-eng.pdf",
+          "section": "help and recover"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-05",
+      "name": "ヘルプ・ローテーション",
+      "category": "ヘルプ",
+      "scope": "U15",
+      "difficulty": 3,
+      "verified": true,
+      "purpose": "ヘルプ後にチームとしてマッチアップを再構成する。",
+      "trigger": [
+        "ドライブでオンボールDFが抜かれる",
+        "ヘルプ発生"
+      ],
+      "actions": [
+        "help_rotation",
+        "matchup_recover"
+      ],
+      "source": [
+        {
+          "title": "JBA なぜマンツーマンが必要か？ 第5版",
+          "url": "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf",
+          "section": "pp.16-17"
+        },
+        {
+          "title": "JBA 15歳以下でのマンツーマンディフェンス推進・実施について 導入準備資料",
+          "url": "https://www.japanbasketball.jp/wp-content/uploads/2015/08/U15mandf_20150812.pdf",
+          "section": "5. ヘルプローテーション"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-06",
+      "name": "クローズアウト",
+      "category": "ボール対応",
+      "scope": "U15",
+      "difficulty": 1,
+      "verified": true,
+      "purpose": "パスを受けた選手へ素早く対応し、シュートとドライブを制限する。",
+      "trigger": [
+        "パス",
+        "キックアウト",
+        "ヘルプから復帰"
+      ],
+      "actions": [
+        "closeout"
+      ],
+      "source": [
+        {
+          "title": "JBA 2021年度 U15ナショナル育成キャンプ 練習映像（局面順）",
+          "url": "https://www.japanbasketball.jp/wp-content/uploads/2022-5-9_JBA_U15movielist-B.pdf",
+          "section": "1-3-3-1 クローズアウトドリル"
+        },
+        {
+          "title": "JBA マンツーマン推進における判定基準の考え方",
+          "url": "https://www.japanbasketball.jp/wp-content/uploads/mandf_reconfirmation_20190513.pdf",
+          "section": "アンダーカテゴリー代表：オンボールディフェンス"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-07",
+      "name": "オフボールスクリーン・チェイス（Lock & Trail）",
+      "category": "スクリーン対応",
+      "scope": "U15+",
+      "difficulty": 2,
+      "verified": true,
+      "purpose": "オフボールスクリーン後もマークマンを追う。",
+      "trigger": [
+        "オフボールスクリーン"
+      ],
+      "actions": [
+        "lock_and_trail"
+      ],
+      "source": [
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "1.2.1 Defending off ball screens – lock and trail"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-08",
+      "name": "オフボールスクリーン・アンダー",
+      "category": "スクリーン対応",
+      "scope": "U15+",
+      "difficulty": 2,
+      "verified": true,
+      "purpose": "スクリーンの下を通ってマークマンへ戻る。",
+      "trigger": [
+        "オフボールスクリーン"
+      ],
+      "actions": [
+        "screen_avoid_under"
+      ],
+      "source": [
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "1.2.2 Defending off ball screens – under"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-09",
+      "name": "オフボールスクリーン・スルー",
+      "category": "スクリーン対応",
+      "scope": "U15+",
+      "difficulty": 2,
+      "verified": true,
+      "purpose": "スクリーンの間を通ってマークマンへ戻る。",
+      "trigger": [
+        "オフボールスクリーン"
+      ],
+      "actions": [
+        "screen_avoid_through"
+      ],
+      "source": [
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "1.2.3 Defending off ball screens – through"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-10",
+      "name": "オフボールスクリーン・スイッチ",
+      "category": "スクリーン対応",
+      "scope": "U15+",
+      "difficulty": 2,
+      "verified": true,
+      "purpose": "スクリーンを契機に2人のマッチアップを交換する。",
+      "trigger": [
+        "オフボールスクリーン"
+      ],
+      "actions": [
+        "switch"
+      ],
+      "source": [
+        {
+          "title": "JBA なぜマンツーマンが必要か？ 第5版",
+          "url": "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf",
+          "section": "pp.17-18, 21-22"
+        },
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "off-ball screen – switch"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-11",
+      "name": "オンボールスクリーン・アンダー",
+      "category": "ボールスクリーン対応",
+      "scope": "U15+",
+      "difficulty": 2,
+      "verified": true,
+      "purpose": "ボールスクリーンの下を通る。",
+      "trigger": [
+        "オンボールスクリーン"
+      ],
+      "actions": [
+        "screen_avoid_under"
+      ],
+      "source": [
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "1.2.5 Defending on ball screens – under"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-12",
+      "name": "オンボールスクリーン・オーバー",
+      "category": "ボールスクリーン対応",
+      "scope": "U15+",
+      "difficulty": 2,
+      "verified": true,
+      "purpose": "ボールスクリーンの上を通って追従する。",
+      "trigger": [
+        "オンボールスクリーン"
+      ],
+      "actions": [
+        "screen_avoid_over"
+      ],
+      "source": [
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "1.2.6 Defending on ball screens – over"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-13",
+      "name": "オンボールスクリーン・スルー",
+      "category": "ボールスクリーン対応",
+      "scope": "U15+",
+      "difficulty": 2,
+      "verified": true,
+      "purpose": "スクリーナーとボールマンの間を通る。",
+      "trigger": [
+        "オンボールスクリーン"
+      ],
+      "actions": [
+        "screen_avoid_through"
+      ],
+      "source": [
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "1.2.7 Defending on ball screens – through"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-14",
+      "name": "オンボールスクリーン・スイッチ",
+      "category": "ボールスクリーン対応",
+      "scope": "U15+",
+      "difficulty": 2,
+      "verified": true,
+      "purpose": "ボールスクリーンを契機にマッチアップを交換する。",
+      "trigger": [
+        "オンボールスクリーン"
+      ],
+      "actions": [
+        "switch"
+      ],
+      "source": [
+        {
+          "title": "JBA なぜマンツーマンが必要か？ 第5版",
+          "url": "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf",
+          "section": "pp.17-18, 21-22"
+        },
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "Defending on ball screens – switch"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    },
+    {
+      "id": "DEF-15",
+      "name": "オンボールスクリーン・ダブル",
+      "category": "ボールスクリーン対応",
+      "scope": "U16+ / チーム方針",
+      "difficulty": 3,
+      "verified": true,
+      "purpose": "ボールスクリーンで2人がボールマンを挟む。",
+      "trigger": [
+        "オンボールスクリーン"
+      ],
+      "actions": [
+        "double"
+      ],
+      "source": [
+        {
+          "title": "FIBA WABC Coaching Manual Level 1",
+          "url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+          "section": "1.2.9 Defending on ball screens – double"
+        }
+      ],
+      "app_mapping": "守備ライブラリから戦術へ教師が選択して登録。具体的な守備座標・STEPは勝手に生成しない。"
+    }
+  ]
+}

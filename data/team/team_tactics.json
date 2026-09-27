@@ -1,0 +1,9 @@
+{
+  "meta": {
+    "description": "このチームが実際に使う戦術の設定。原本（basketball_tactics_with_u16_setplays.json・diagrams.json）は変更せず、戦術IDを参照して、チーム独自の内容だけを上書き・追加する。",
+    "rule": "原本 + チーム独自設定 = アプリで表示する戦術。ここに書かれていない項目は原本を使う。内容は教師が入力する（自動では作らない）。",
+    "initial_targets": ["BLOB-03", "SLOB-01", "HC-01"],
+    "fields": "use, team_call_name, name, signal, teacher_memo, team_notes, player_roles, positions, step_points, step_roles, position_notes, defense, offense_options, decisions, quizzes"
+  },
+  "tactics": {}
+}

@@ -1,0 +1,738 @@
+{
+  "meta": {
+    "version": "1.1",
+    "created": "2026-09-26",
+    "language": "ja",
+    "intended_use": "中学校バスケットボール部のデジタル作戦盤教材",
+    "source_policy": "公開資料で動きを確認できたものを登録。推測で動きを補完しない。",
+    "categories": {
+      "BLOB": "エンドスローイン",
+      "SLOB": "サイドスローイン",
+      "HALFCOURT": "ハーフコート",
+      "SET_U16_PLUS": "U16以降のセットプレー"
+    },
+    "official_guidance": {
+      "JBA": "https://www.japanbasketball.jp/wp-content/uploads/game-model-part_document01.pdf",
+      "JBA_note": "U15指導内容指針案では1on1、オフボールスクリーン、5アウト、4アウト1イン等を扱い、セットプレーはU16以降に配置されている。",
+      "JBA_set_play_note": "JBAの年代別指導内容指針では「セットプレーの導入」がU16から示されている。本アプリではこれを「U16以降の資料・戦術」として別カテゴリにする。中学校部活動で採用する場合は、顧問がチームの発達段階と実情を確認して使用する。"
+    },
+    "supplementary_sources": [
+      {
+        "title": "USA Basketball - Coaches Corner: Baseline Out Of Bounds Plays",
+        "url": "https://www.usab.com/videos/2020/03/coaches-corner-baseline-out-of-bounds-plays"
+      },
+      {
+        "title": "USA Basketball - Coaches Corner: Sideline Out Of Bounds Play",
+        "url": "https://www.usab.com/videos/2020/03/coaches-corner-sideline-out-of-bounds-play"
+      },
+      {
+        "title": "YouTube - 5 Out Pass and Cut Basketball Offense",
+        "url": "https://www.youtube.com/watch?v=AD12697wncU"
+      }
+    ],
+    "implementation_rules": [
+      "Source play and team-specific adaptation must be stored separately.",
+      "Do not reproduce source diagrams as images; redraw court, players, arrows and screens in SVG/canvas.",
+      "Every play should support left-right mirroring.",
+      "Every play should support player-focus mode O1-O5.",
+      "Unknown or diagram-only roles must not be invented.",
+      "Use source URLs inside the app's data for teacher reference."
+    ],
+    "advanced_set_source": "FIBA WABC Level 3 Coaching Manual Chapter 2.1にはFlex、Shuffle、Triangle、Horns、Princeton、UCLA Cut、Zipperが掲載され、Chapter 2.3にはPistolとElevator screensが掲載されている。"
+  },
+  "tactics": [
+    {
+      "id": "BLOB-01",
+      "name": "Box Gator",
+      "category": "BLOB",
+      "formation": "Box",
+      "theme": "Double elevator screen",
+      "source_title": "Coach's Clipboard - Box Baseline Out-of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/OBBoxPlays.html",
+      "verified": true,
+      "steps": [
+        "O4 and O5 set an elevator screen for O2.",
+        "O2 cuts through the elevator screen for a pass and shot.",
+        "After O2 cuts, O3 and O5 reposition to form a second elevator screen.",
+        "O4 cuts through the second elevator screen for a pass and lay-up."
+      ],
+      "options": [
+        "O2 shot",
+        "O4 lay-up"
+      ],
+      "player_roles": {
+        "1": "Inbounder / according to source diagram",
+        "2": "First elevator-screen cutter",
+        "3": "Moves to second-screen position",
+        "4": "Second elevator-screen cutter",
+        "5": "First screen and second screen participant"
+      },
+      "adaptation_note": "Rebuild exact coordinates from the source diagram before final app use."
+    },
+    {
+      "id": "BLOB-02",
+      "name": "Box-1",
+      "category": "BLOB",
+      "formation": "Box",
+      "theme": "Cross-screen, seal and roll",
+      "source_title": "Coach's Clipboard - Box Baseline Out-of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/OBBoxPlays.html",
+      "verified": true,
+      "steps": [
+        "O4 screens for O5; O5 cuts to the opposite block.",
+        "O4 seals the screened defender and rolls to the hoop.",
+        "O1 cuts around O3's down-screen to the top.",
+        "O3 moves to the weak-side corner after screening."
+      ],
+      "options": [
+        "O5",
+        "O4 if defense switches",
+        "O1 or O3 outside"
+      ],
+      "player_roles": {
+        "1": "Uses O3 down-screen and fills top",
+        "2": "Inbounder / passer in source diagram",
+        "3": "Down-screener then weak-side corner",
+        "4": "Screens O5, seals, rolls",
+        "5": "Cuts to opposite block"
+      },
+      "adaptation_note": "The source uses O1-O5 labels; exact starting coordinates must follow the source diagram."
+    },
+    {
+      "id": "BLOB-03",
+      "name": "Box-2",
+      "category": "BLOB",
+      "formation": "Box",
+      "theme": "Back-screen then down-screen for shooter",
+      "source_title": "Coach's Clipboard - Box Baseline Out-of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/OBBoxPlays.html",
+      "verified": true,
+      "steps": [
+        "O3 back-screens for O5, who seeks inside position on the opposite low block.",
+        "O4 fakes in, cuts to the corner and receives the inbound pass.",
+        "O1 cuts to the top ball-side area.",
+        "O4 passes to O1.",
+        "O4 down-screens for O2.",
+        "O2 cuts around the screen to the ball-side corner for the shot."
+      ],
+      "options": [
+        "O2 corner shot",
+        "O4 post if defender closes out"
+      ],
+      "player_roles": {
+        "1": "Ball-side top",
+        "2": "Shooter / corner cutter",
+        "3": "Back-screener for O5",
+        "4": "Inbound receiver, then down-screener",
+        "5": "Inside-position cutter"
+      },
+      "adaptation_note": "Zone variation is also documented but should be stored as a separate variant."
+    },
+    {
+      "id": "BLOB-04",
+      "name": "Box-3",
+      "category": "BLOB",
+      "formation": "Box",
+      "theme": "Cross-screen plus wing screen",
+      "source_title": "Coach's Clipboard - Box Baseline Out-of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/OBBoxPlays.html",
+      "verified": true,
+      "steps": [
+        "O4 screens for O5; O5 cuts around the screen and may receive the inbound pass.",
+        "O4 seals for inside position and may receive the pass.",
+        "O1 screens for O2.",
+        "O2 cuts to the wing for a possible pass and shot.",
+        "O1 pops to the top after screening."
+      ],
+      "options": [
+        "O5/O4 inside",
+        "O2 wing shot"
+      ],
+      "player_roles": {
+        "1": "Screens O2, then pops top",
+        "2": "Uses O1 screen to wing",
+        "3": "Source diagram participant; exact role to be taken from diagram",
+        "4": "Screens O5 then seals",
+        "5": "Cuts around O4 screen"
+      },
+      "adaptation_note": "One source sentence does not fully describe O3; do not invent a role beyond the diagram."
+    },
+    {
+      "id": "BLOB-05",
+      "name": "Box-54",
+      "category": "BLOB",
+      "formation": "Box",
+      "theme": "Post back-screen with switch counter",
+      "source_title": "Coach's Clipboard - Box Baseline Out-of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/OBBoxPlays.html",
+      "verified": true,
+      "steps": [
+        "O5 back-screens for O4.",
+        "Inbound pass goes to O2 in the ball-side corner.",
+        "O4 cuts around O5 for a possible lay-up.",
+        "If defense switches and follows O4, O4 clears to the opposite block.",
+        "O5 seals and rolls to the ball-side block for a possible pass and lay-up."
+      ],
+      "options": [
+        "O4 lay-up",
+        "O5 lay-up after switch",
+        "O2 or O1 outside shot"
+      ],
+      "player_roles": {
+        "1": "Wing/outside option",
+        "2": "Corner receiver",
+        "3": "Source diagram participant; exact role to be taken from diagram",
+        "4": "Initial cutter and switch-clear player",
+        "5": "Back-screener and second interior option"
+      },
+      "adaptation_note": "The exact 5-player starting alignment should be reconstructed from the source diagrams."
+    },
+    {
+      "id": "BLOB-06",
+      "name": "Wheel",
+      "category": "BLOB",
+      "formation": "Stack",
+      "theme": "Sequential curl cuts",
+      "source_title": "Coach's Clipboard - Miscellaneous Baseline Out-of-Bounds Plays",
+      "source_url": "https://www.coachesclipboard.net/OBPlaysMore.html",
+      "verified": true,
+      "steps": [
+        "O1 curls around the stack toward the basket and looks for the pass.",
+        "If no pass, O1 clears to the opposite short corner.",
+        "O2 delays, curls around the stack and looks for the pass at the ball-side short corner.",
+        "O4 moves into the paint and O5 moves to the point.",
+        "If O5 receives the ball, O3 slips into the opposite low post for a return pass."
+      ],
+      "options": [
+        "O1 lay-up",
+        "O2 shot",
+        "O3 return-pass inside"
+      ],
+      "player_roles": {
+        "1": "First curl cutter",
+        "2": "Second curl cutter",
+        "3": "Weak-side slip option",
+        "4": "Paint mover",
+        "5": "Point receiver"
+      },
+      "adaptation_note": "The source contains a related 'Wheel and Back' counter; store it as a separate variant if needed."
+    },
+    {
+      "id": "SLOB-01",
+      "name": "Triangle",
+      "category": "SLOB",
+      "formation": "Triangle",
+      "theme": "Screen for cutter and shooter",
+      "source_title": "Coach's Clipboard - Sideline Out-Of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/SidelinePlays.html",
+      "verified": true,
+      "steps": [
+        "O2 screens for O3; O3 cuts to the corner.",
+        "O5 down-screens for O2.",
+        "O2 cuts to the top for a possible shot.",
+        "If defense switches O5's screen, O5 seals the defender and looks for the inbound pass and lay-up."
+      ],
+      "options": [
+        "O2 outside shot",
+        "O5 mismatch inside"
+      ],
+      "player_roles": {
+        "1": "Source diagram participant; exact role from diagram",
+        "2": "Screens O3 then receives screen from O5",
+        "3": "Cuts to corner",
+        "4": "Source diagram participant",
+        "5": "Down-screener and seal option"
+      },
+      "adaptation_note": "Use source diagram for exact starting spots."
+    },
+    {
+      "id": "SLOB-02",
+      "name": "Box-1",
+      "category": "SLOB",
+      "formation": "Box",
+      "theme": "Down-screens then back-screen",
+      "source_title": "Coach's Clipboard - Sideline Out-Of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/SidelinePlays.html",
+      "verified": true,
+      "steps": [
+        "O4 and O5 set down-screens for O2 and O3.",
+        "O2 and O3 cut toward the three-point area.",
+        "O3 receives the inbound pass; O2 stays as a safety.",
+        "O5 back-screens for O1.",
+        "O1 cuts baseline-side to the hoop.",
+        "O3 looks to pass to O1.",
+        "If defended, O5 can seal and roll; otherwise flow to half-court offense."
+      ],
+      "options": [
+        "O1 lay-up",
+        "O5 interior option",
+        "O2 safety / reset"
+      ],
+      "player_roles": {
+        "1": "Back-screen cutter to rim",
+        "2": "Safety",
+        "3": "Inbound receiver / passer",
+        "4": "First screen participant",
+        "5": "First screens then back-screens O1"
+      },
+      "adaptation_note": "Half-court continuation is explicitly part of the source description."
+    },
+    {
+      "id": "SLOB-03",
+      "name": "Box-2",
+      "category": "SLOB",
+      "formation": "Box",
+      "theme": "Screen the screener",
+      "source_title": "Coach's Clipboard - Sideline Out-Of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/SidelinePlays.html",
+      "verified": true,
+      "steps": [
+        "O2 down-screens for O1.",
+        "O2 then uses the staggered screen from O5 and O4.",
+        "O2 is the intended shooter and can receive from O3 or O1.",
+        "O2 can shoot or pass to O4 posting up.",
+        "O5 can flash high and clear for a lob or hi-low option."
+      ],
+      "options": [
+        "O2 shot",
+        "O4 post",
+        "O4 lob / hi-low"
+      ],
+      "player_roles": {
+        "1": "Receiver/passer to O2",
+        "2": "Shooter and first screener",
+        "3": "Inbound receiver / passer",
+        "4": "Staggered screener and post option",
+        "5": "Staggered screener / rebound position"
+      },
+      "adaptation_note": "The source also gives a 2-3 zone variation; keep it as a separate variant."
+    },
+    {
+      "id": "SLOB-04",
+      "name": "Circle",
+      "category": "SLOB",
+      "formation": "Double screen / staggered screen",
+      "theme": "Two-stage screen for shooter",
+      "source_title": "Coach's Clipboard - Sideline Out-Of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/SidelinePlays.html",
+      "verified": true,
+      "steps": [
+        "O2 curls around the O4-O5 double-screen to the opposite wing.",
+        "O1 follows O2 and is targeted for the inbound pass from O3.",
+        "O3 moves to the ball-side corner after passing.",
+        "O5 and O4 sprint into a staggered double-screen.",
+        "O2 uses the staggered screens for a possible three-point shot or drive.",
+        "If screens are switched, O5 can slip inside for a pass."
+      ],
+      "options": [
+        "O2 shot",
+        "O2 drive",
+        "O5 slip"
+      ],
+      "player_roles": {
+        "1": "First receiver",
+        "2": "Shooter/cutter",
+        "3": "Inbounder then corner",
+        "4": "First and second screen participant",
+        "5": "First and second screen participant / slip"
+      },
+      "adaptation_note": "Exact timing between the first and second screen should be preserved in the animation."
+    },
+    {
+      "id": "SLOB-05",
+      "name": "Pairs",
+      "category": "SLOB",
+      "formation": "Pairs",
+      "theme": "Shooter plus post option",
+      "source_title": "Coach's Clipboard - Sideline Out-Of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/SidelinePlays.html",
+      "verified": true,
+      "steps": [
+        "O4 screens for O2.",
+        "O2 cuts over or under depending on sideline depth and defensive position.",
+        "O3 looks first to O2.",
+        "O2 can shoot or pass inside to O4.",
+        "O5 screens for O1.",
+        "O1 is the safety option if O2 is not open."
+      ],
+      "options": [
+        "O2 shot",
+        "O4 post",
+        "O1 safety",
+        "O5 inbound option"
+      ],
+      "player_roles": {
+        "1": "Safety",
+        "2": "Primary shooter",
+        "3": "Inbounder/passer",
+        "4": "Screens O2 then posts",
+        "5": "Screens O1 / possible receiver"
+      },
+      "adaptation_note": "The source explicitly describes cutting choice based on inbound position."
+    },
+    {
+      "id": "SLOB-06",
+      "name": "Stack-2",
+      "category": "SLOB",
+      "formation": "Stack",
+      "theme": "Near-side cut plus opposite lob",
+      "source_title": "Coach's Clipboard - Sideline Out-Of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/SidelinePlays.html",
+      "verified": true,
+      "steps": [
+        "O1 screens for O2 and then replaces O2's spot.",
+        "O2 fakes a V-cut, uses O1's screen and runs the near sideline.",
+        "If no pass, O2 moves to the ball-side corner.",
+        "O5 takes steps away and back-screens O4.",
+        "O4 cuts to the opposite side using the back-screen.",
+        "If no first option, an inbound lob to O4 is available; otherwise pass to O1 or O5 and run normal offense."
+      ],
+      "options": [
+        "O2 near-side catch",
+        "O4 lob",
+        "O1/O5 safety"
+      ],
+      "player_roles": {
+        "1": "First screener then safety",
+        "2": "Primary near-side cutter",
+        "3": "Inbounder",
+        "4": "Opposite-side lob cutter",
+        "5": "Back-screener for O4"
+      },
+      "adaptation_note": "Source warns stack spacing relative to the sideline and lane line; reproduce that spacing rule in teaching notes."
+    },
+    {
+      "id": "SLOB-07",
+      "name": "Kansas",
+      "category": "SLOB",
+      "formation": "Stack",
+      "theme": "Curl counter to back-cut",
+      "source_title": "Coach's Clipboard - Sideline Out-Of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/SidelinePlays.html",
+      "verified": true,
+      "steps": [
+        "O1 pops out of the stack for the inbound pass and dribbles toward the top-right area.",
+        "O4 clears to the opposite corner.",
+        "O2 drops inside and curls around O5's screen for a pass from O1.",
+        "O2 can shoot or pass to O5 rolling to the hoop.",
+        "On the counter, O2 fakes the curl and back-cuts to the hoop for a pass from O1."
+      ],
+      "options": [
+        "O2 curl shot",
+        "O5 roll",
+        "O2 back-cut"
+      ],
+      "player_roles": {
+        "1": "Inbound receiver / initiator",
+        "2": "Primary cutter and counter",
+        "3": "Inbounder in source diagram",
+        "4": "Clears opposite corner",
+        "5": "Screener and roll option"
+      },
+      "adaptation_note": "The source presents the back-cut as a counter after the curl has been shown to the defense."
+    },
+    {
+      "id": "SLOB-08",
+      "name": "Celtics",
+      "category": "SLOB",
+      "formation": "Down screen",
+      "theme": "Fake handoff and handoff + PnR",
+      "source_title": "Coach's Clipboard - Sideline Out-Of-Bounds Basketball Plays",
+      "source_url": "https://www.coachesclipboard.net/SidelinePlays.html",
+      "verified": true,
+      "steps": [
+        "O4 down-screens for O1.",
+        "O1 cuts to the top and receives the inbound pass from O3.",
+        "O4 posts briefly and may receive; otherwise clears to the opposite short corner.",
+        "O1 can use a fake handoff to drive.",
+        "O1 can instead hand off to O3.",
+        "O3 runs pick-and-roll or pick-and-pop with O5 while O1 clears to the left wing."
+      ],
+      "options": [
+        "O4 post",
+        "O1 fake-handoff drive",
+        "O3 + O5 pick-and-roll/pop"
+      ],
+      "player_roles": {
+        "1": "Primary initiator",
+        "2": "Source diagram participant",
+        "3": "Inbounder then handoff ball-handler",
+        "4": "Down-screener / post / clear",
+        "5": "Ball-screen screener"
+      },
+      "adaptation_note": "The source states that the fake handoff becomes more effective after defenders start cheating toward the handoff."
+    },
+    {
+      "id": "HC-01",
+      "name": "5-Out Pass & Cut / Replacing the Cutter",
+      "category": "HALFCOURT",
+      "formation": "5-Out",
+      "theme": "Pass, cut, fill",
+      "source_title": "FIBA/WABC Level 1 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+      "verified": true,
+      "steps": [
+        "Ball-handler passes and cuts to the basket.",
+        "The nearest player cuts toward the ball and fills the perimeter space.",
+        "Other players balance to fill perimeter positions.",
+        "The cutter first threatens the basket before filling outside."
+      ],
+      "options": [],
+      "player_roles": {
+        "1": "Pass/cut example in source",
+        "2": "Receiver and perimeter filler as sequence progresses",
+        "3": "Perimeter filler/replacer",
+        "4": "Perimeter support",
+        "5": "Perimeter support"
+      },
+      "adaptation_note": "FIBA describes the movement principle rather than one immutable five-player play; store it as a motion rule, not a fixed play."
+    },
+    {
+      "id": "HC-02",
+      "name": "5-Out Purposeful Movement / Timing & Spacing",
+      "category": "HALFCOURT",
+      "formation": "5-Out",
+      "theme": "Timing and spacing",
+      "source_title": "FIBA/WABC Level 1 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+      "verified": true,
+      "steps": [
+        "A top player passes and cuts.",
+        "The cutter continues toward the basket after crossing the free-throw line.",
+        "A second player replaces the vacated perimeter space at the correct timing.",
+        "Players read teammates and defenders rather than moving mechanically along the three-point line."
+      ],
+      "options": [],
+      "player_roles": {
+        "1": "Top cutter in source example",
+        "2": "Wing receiver",
+        "3": "Replacement/filler",
+        "4": "Perimeter support",
+        "5": "Perimeter support"
+      },
+      "adaptation_note": "This is a motion-offense teaching pattern, not a single dead-ball set."
+    },
+    {
+      "id": "HC-03",
+      "name": "5-Out Pass & Screen Away",
+      "category": "HALFCOURT",
+      "formation": "5-Out",
+      "theme": "Pass then off-ball screen",
+      "source_title": "FIBA/WABC Level 1 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+      "verified": true,
+      "steps": [
+        "Pass to the wing.",
+        "The passer sets a down-screen/screen-away for another perimeter player or low-post player.",
+        "The screened player uses the screen and relocates.",
+        "A pass-and-cut action can flow into a baseline screen for the next player."
+      ],
+      "options": [],
+      "player_roles": {
+        "1": "Passer / screener in source example",
+        "2": "Perimeter player",
+        "3": "Screen user",
+        "4": "Wing receiver",
+        "5": "Post/perimeter support"
+      },
+      "adaptation_note": "Use the source diagrams to define one fixed five-player variant for animation."
+    },
+    {
+      "id": "HC-04",
+      "name": "5-Out Ball Reversal",
+      "category": "HALFCOURT",
+      "formation": "5-Out",
+      "theme": "Reverse the ball to move defenders",
+      "source_title": "FIBA/WABC Level 1 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+      "verified": true,
+      "steps": [
+        "Pass the ball across the perimeter through a reversal sequence.",
+        "Players relocate as the ball moves from side to side.",
+        "Defenders must shift to new positions.",
+        "When a defender is late or poorly positioned, the offense may attack the opening with a drive."
+      ],
+      "options": [],
+      "player_roles": {
+        "1": "Perimeter mover",
+        "2": "Perimeter passer/mover",
+        "3": "Perimeter player",
+        "4": "Drive-side player in source example",
+        "5": "Central/perimeter link"
+      },
+      "adaptation_note": "This play is best taught as a decision-making pattern: reverse -> observe defense -> attack advantage."
+    },
+    {
+      "id": "HC-05",
+      "name": "UCLA Cut",
+      "category": "HALFCOURT",
+      "formation": "High post / perimeter",
+      "theme": "High-post screen for pass-and-cut",
+      "source_title": "FIBA/WABC Level 3 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-3-eng.pdf",
+      "verified": true,
+      "steps": [
+        "A perimeter player passes.",
+        "The passer cuts toward the basket.",
+        "A high-post player sets the screen that supports the cut.",
+        "If the cut does not produce a pass, the cutter can clear/relocate and the offense continues."
+      ],
+      "options": [],
+      "player_roles": {
+        "1": "Passer/cutter in source diagram",
+        "2": "Receiver in source diagram",
+        "3": "Perimeter support",
+        "4": "Perimeter/support player",
+        "5": "High-post screener"
+      },
+      "adaptation_note": "FIBA defines UCLA Cut as a simple pass-and-cut motion using a high-post screen. Specific five-player variants should be stored separately."
+    },
+    {
+      "id": "HC-06",
+      "name": "Flex",
+      "category": "HALFCOURT",
+      "formation": "Continuity",
+      "theme": "Baseline cut + screen the screener",
+      "source_title": "FIBA/WABC Level 3 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-3-eng.pdf",
+      "verified": true,
+      "steps": [
+        "A player cuts along the baseline using a back-screen.",
+        "The ball is reversed.",
+        "A screen-the-screener action follows.",
+        "The same structure continues on the other side of the floor."
+      ],
+      "options": [],
+      "player_roles": {
+        "1": "Ball reversal and screener in source sequence",
+        "2": "Perimeter receiver",
+        "3": "Baseline cutter",
+        "4": "Next cutter in continuity",
+        "5": "Back-screener"
+      },
+      "adaptation_note": "The source describes Flex as a continuity offense; treat the animation as one cycle rather than a single-shot play."
+    },
+    {
+      "id": "SET-U16-01",
+      "name": "Flex",
+      "category": "SET_U16_PLUS",
+      "formation": "Continuity",
+      "theme": "Flex cut / screen-the-screener",
+      "source_title": "FIBA WABC Level 3 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-3-eng.pdf",
+      "verified": false,
+      "source_status": "FIBA資料の目次で名称・分類を確認。具体的な5人の動線は元図確認後に確定する。",
+      "steps": [],
+      "options": [],
+      "player_roles": {},
+      "adaptation_note": "アプリでは確認前は『動作確認中』と表示し、推測で動きを描かない。"
+    },
+    {
+      "id": "SET-U16-02",
+      "name": "Shuffle",
+      "category": "SET_U16_PLUS",
+      "formation": "Shuffle",
+      "theme": "連続カットを使うセット",
+      "source_title": "FIBA WABC Level 3 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-3-eng.pdf",
+      "verified": false,
+      "source_status": "FIBA資料の目次で名称・分類を確認。具体的な5人の動線は元図確認後に確定する。",
+      "steps": [],
+      "options": [],
+      "player_roles": {},
+      "adaptation_note": "1サイクルの動線を図で確認してからアニメーション化する。"
+    },
+    {
+      "id": "SET-U16-03",
+      "name": "Triangle",
+      "category": "SET_U16_PLUS",
+      "formation": "Triangle",
+      "theme": "Triangle配置を起点とするセット",
+      "source_title": "FIBA WABC Level 3 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-3-eng.pdf",
+      "verified": false,
+      "source_status": "FIBA資料の目次で名称・分類を確認。具体的な5人の動線は元図確認後に確定する。",
+      "steps": [],
+      "options": [],
+      "player_roles": {},
+      "adaptation_note": "Triangleは複数のバリエーションがあるため、採用variantを明示する。"
+    },
+    {
+      "id": "SET-U16-04",
+      "name": "Horns",
+      "category": "SET_U16_PLUS",
+      "formation": "Horns",
+      "theme": "2エルボーを起点とするセット",
+      "source_title": "FIBA WABC Level 3 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-3-eng.pdf",
+      "verified": false,
+      "source_status": "FIBA資料の目次で名称・分類を確認。具体的な5人の動線は元図確認後に確定する。",
+      "steps": [],
+      "options": [],
+      "player_roles": {},
+      "adaptation_note": "Hornsは派生形が多いため、セット名だけで動きを決めない。"
+    },
+    {
+      "id": "SET-U16-05",
+      "name": "Princeton",
+      "category": "SET_U16_PLUS",
+      "formation": "Princeton",
+      "theme": "ハイポストを利用したカット・スクリーン",
+      "source_title": "FIBA WABC Level 3 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-3-eng.pdf",
+      "verified": false,
+      "source_status": "FIBA資料の目次で名称・分類を確認。具体的な5人の動線は元図確認後に確定する。",
+      "steps": [],
+      "options": [],
+      "player_roles": {},
+      "adaptation_note": "Princetonも複数パターンがあるため、variantを別IDで管理できる構造にする。"
+    },
+    {
+      "id": "SET-U16-06",
+      "name": "UCLA Cut",
+      "category": "SET_U16_PLUS",
+      "formation": "High-post / perimeter",
+      "theme": "ハイポストスクリーンを使うカット",
+      "source_title": "FIBA WABC Level 3 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-3-eng.pdf",
+      "verified": true,
+      "source_status": "FIBA資料で名称・基本構造を確認。ただしチーム用の5人セットとしてのvariantは別管理する。",
+      "steps": [
+        "パスした選手がハイポストのスクリーンを使ってゴール方向へカットする基本構造を学ぶ。"
+      ],
+      "options": [],
+      "player_roles": {},
+      "adaptation_note": "UCLA Cutはentry/actionとしても使われる。セット名とアクション名を分離する。"
+    },
+    {
+      "id": "SET-U16-07",
+      "name": "Zipper",
+      "category": "SET_U16_PLUS",
+      "formation": "Zipper",
+      "theme": "Zipper entry / baseline-to-elbow cut",
+      "source_title": "FIBA WABC Level 3 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-3-eng.pdf",
+      "verified": false,
+      "source_status": "FIBA資料で名称・分類を確認。具体的な5人の動線は元図確認後に確定する。",
+      "steps": [],
+      "options": [],
+      "player_roles": {},
+      "adaptation_note": "Zipperはentryとして使われることがあるため、その後の展開を別データにできるようにする。"
+    },
+    {
+      "id": "SET-U16-08",
+      "name": "Elevator Screen",
+      "category": "SET_U16_PLUS",
+      "formation": "Variant dependent",
+      "theme": "エレベータースクリーン",
+      "source_title": "FIBA WABC Level 3 Coaching Manual",
+      "source_url": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-3-eng.pdf",
+      "verified": false,
+      "source_status": "FIBA資料でelevator screenの掲載を確認。単独のセット名ではなく共通アクションとして登録。",
+      "steps": [],
+      "options": [],
+      "player_roles": {},
+      "adaptation_note": "BLOB-01 Box Gatorにも使われるため、共通アクションとセット名を分離する。"
+    }
+  ]
+}

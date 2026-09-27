@@ -1,0 +1,54 @@
+# main ブランチへ push すると、テスト → 公開フォルダ（dist/）作成 → GitHub Pages へ公開
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # Actions 画面から手動でも実行できる
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリを取得
+        uses: actions/checkout@v4
+
+      - name: Node.js を準備
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # 依存パッケージはないため npm install は不要
+      - name: 自動テスト（失敗したら公開しない）
+        run: npm test
+
+      - name: データのチェックと公開フォルダ（dist/）の作成
+        run: node build.js --dist
+
+      - name: 公開フォルダの中身を表示（失敗時の確認用）
+        run: ls -R dist | head -50
+
+      - name: GitHub Pages 用の成果物をアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: GitHub Pages へ公開
+        id: deployment
+        uses: actions/deploy-pages@v4

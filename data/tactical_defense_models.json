@@ -1,0 +1,2158 @@
+{
+  "version": "1.0",
+  "created": "2026-09-26",
+  "title": "各戦術に対するマンツーマン守備・教材モデル",
+  "important": {
+    "status": "teaching_model",
+    "verified": false,
+    "teacher_review_required": true,
+    "not_source_fact": "各STEPの具体的な守備動作は、元のオフェンス資料に明記されたものだけではなく、JBA/FIBAの守備原則と公開プレー構造から作った教材モデルを含む。",
+    "apply_policy": "team_tactics.jsonへ自動反映せず、教師確認後に採用する。",
+    "current_app": "現在の会話上、20件の戦術原本に対して18件がアニメーション可と報告されている。未対応2件は推測で特定しない。"
+  },
+  "evidence_basis": {
+    "facts": [
+      "JBA U15マンツーマン基準はマッチアップを明確にし、ボールやオフェンスの移動に合わせて守備位置を移動することを示している。",
+      "FIBA/WABC Level 1はオフボールスクリーンの主な方法としてLock and Trail / Through / Under / Switchを示している。",
+      "Coach’s ClipboardはBLOBマンツーマン守備で、inside screenへのstep-under/switchと、インバウンダーからのinside passを防ぐ方法を説明している。",
+      "Coach’s Clipboardの一部BLOB/SLOBはswitch時のoffense counterを明記している。"
+    ],
+    "model_defaults": [
+      "BLOB/SLOBの内側スクリーン：step-under→switch",
+      "広い外側オフボールスクリーン：lock-and-trail",
+      "受け手：closeout",
+      "カッター：deny/follow",
+      "オンボールスクリーン：必要な箇所ではoverを教材モデルとして使用"
+    ]
+  },
+  "sources": {
+    "jba": "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf",
+    "fiba1": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+    "fiba2": "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-2-eng.pdf",
+    "ccm2m": "https://www.coachesclipboard.net/M2MDefense2.html",
+    "ccblob": "https://www.coachesclipboard.net/OBBoxPlays.html",
+    "ccblobmore": "https://www.coachesclipboard.net/OBPlaysMore.html",
+    "ccslob": "https://www.coachesclipboard.net/SidelinePlays.html"
+  },
+  "tactics": [
+    {
+      "tactic_id": "BLOB-01",
+      "name": "Box Gator",
+      "category": "BLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O1",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D1",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O4・O5がO2をエレベータースクリーン",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "screen_avoid_through",
+              "target": "O2",
+              "screen_by": "O4,O5",
+              "method": "through"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O2がスクリーンを抜ける",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D4",
+              "action": "recover",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "recover",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O3・O5が2回目のエレベータースクリーンへ",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "screen_avoid_through",
+              "target": "O4",
+              "screen_by": "O3,O5",
+              "method": "through"
+            },
+            {
+              "defender": "D2",
+              "action": "recover",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O4が2回目のスクリーンをカット",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "screen_avoid_through",
+              "target": "O4",
+              "screen_by": "O3,O5",
+              "method": "through"
+            },
+            {
+              "defender": "D3",
+              "action": "stay_in_matchup",
+              "target": "O3"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "エレベーターを通過して追従する教材モデル。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/OBBoxPlays.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "BLOB-02",
+      "name": "Box-1",
+      "category": "BLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O2",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D2",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O4がO5をクロススクリーン",
+          "defense": [
+            {
+              "defender": "D5",
+              "action": "screen_avoid_under",
+              "target": "O5",
+              "screen_by": "O4",
+              "method": "under"
+            },
+            {
+              "defender": "D4",
+              "action": "switch",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O4がシールしてロール",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "deny",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "recover",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O1がO3のダウンスクリーン",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "lock_and_trail",
+              "target": "O1",
+              "screen_by": "O3"
+            },
+            {
+              "defender": "D3",
+              "action": "stay_in_matchup",
+              "target": "O3"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O3がウイークサイドへ",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "adjust_to_ball",
+              "target": "O3"
+            },
+            {
+              "defender": "D1",
+              "action": "closeout",
+              "target": "O1"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "資料にswitch時のO4 openが明記される。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/OBBoxPlays.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "BLOB-03",
+      "name": "Box-2",
+      "category": "BLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O2",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D2",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O3がO5をバック・スクリーン",
+          "defense": [
+            {
+              "defender": "D5",
+              "action": "screen_avoid_under",
+              "target": "O5",
+              "screen_by": "O3",
+              "method": "under"
+            },
+            {
+              "defender": "D3",
+              "action": "switch",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O4がコーナーへ出てinbound",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "closeout",
+              "target": "O4"
+            },
+            {
+              "defender": "D2",
+              "action": "deny",
+              "target": "O2",
+              "note": "教材データ上の内部表現をアプリ既存action `deny` に統一。"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O1がトップへ",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "closeout",
+              "target": "O1"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O4→O1パス",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "closeout",
+              "target": "O1"
+            },
+            {
+              "defender": "D4",
+              "action": "recover",
+              "target": "O4"
+            }
+          ]
+        },
+        {
+          "offense_step": 5,
+          "trigger": "O4がO2へダウンスクリーン",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "lock_and_trail",
+              "target": "O2",
+              "screen_by": "O4"
+            },
+            {
+              "defender": "D4",
+              "action": "stay_in_matchup",
+              "target": "O4"
+            }
+          ]
+        },
+        {
+          "offense_step": 6,
+          "trigger": "O2がコーナーへ",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D1",
+              "action": "adjust_to_ball",
+              "target": "O1"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "O2の外側カットをlock-and-trailで追う教材モデル。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/OBBoxPlays.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "BLOB-04",
+      "name": "Box-3",
+      "category": "BLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O3",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D3",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O4がO5をスクリーン",
+          "defense": [
+            {
+              "defender": "D5",
+              "action": "screen_avoid_under",
+              "target": "O5",
+              "screen_by": "O4",
+              "method": "under"
+            },
+            {
+              "defender": "D4",
+              "action": "switch",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O4がシール",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "deny",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "recover",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O1がO2をスクリーン",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "lock_and_trail",
+              "target": "O2",
+              "screen_by": "O1"
+            },
+            {
+              "defender": "D1",
+              "action": "stay_in_matchup",
+              "target": "O1"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O2がウイングへ",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D1",
+              "action": "recover",
+              "target": "O1"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "内側スクリーンはstep-under/switch、外側はlock-and-trailという一貫モデル。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/OBBoxPlays.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "BLOB-05",
+      "name": "Box-54",
+      "category": "BLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O3",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D3",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O5がO4をバック・スクリーン",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "screen_avoid_under",
+              "target": "O4",
+              "screen_by": "O5",
+              "method": "under"
+            },
+            {
+              "defender": "D5",
+              "action": "switch",
+              "target": "O4"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O2へinbound",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O4がO5のスクリーンでringへ",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "switch",
+              "target": "O5"
+            },
+            {
+              "defender": "D5",
+              "action": "switch",
+              "target": "O4"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "switch後O4が反対ブロックへclear",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "recover",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "deny",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 5,
+          "trigger": "O5がseal→ball-side block",
+          "defense": [
+            {
+              "defender": "D5",
+              "action": "deny",
+              "target": "O5"
+            },
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "資料にswitch後のO4 clear→O5 rollのcounterが明記。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/OBBoxPlays.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html"
+      ]
+    },
+    {
+      "tactic_id": "BLOB-06",
+      "name": "Wheel",
+      "category": "BLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O3",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D3",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O1がstack外側をcurl",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "lock_and_trail",
+              "target": "O1"
+            },
+            {
+              "defender": "D3",
+              "action": "deny",
+              "target": "O3",
+              "note": "教材データ上の内部表現をアプリ既存action `deny` に統一。"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O1が反対short cornerへclear",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "recover",
+              "target": "O1"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O2が遅れてcurl",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "lock_and_trail",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O4がpaint、O5がtopへ",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "help_position",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "closeout",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 5,
+          "trigger": "O5へパス、O3がweak-side low postへslip",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "deny",
+              "target": "O3"
+            },
+            {
+              "defender": "D5",
+              "action": "closeout",
+              "target": "O5"
+            },
+            {
+              "defender": "D4",
+              "action": "help_position",
+              "target": "O4"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "連続curlを追い続けることを主教材にする。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/OBPlaysMore.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "SLOB-01",
+      "name": "Triangle",
+      "category": "SLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O1",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D1",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O2がO3をスクリーン",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "lock_and_trail",
+              "target": "O3",
+              "screen_by": "O2"
+            },
+            {
+              "defender": "D2",
+              "action": "stay_in_matchup",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O5がO2へdown-screen",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "screen_avoid_under",
+              "target": "O2",
+              "screen_by": "O5",
+              "method": "under"
+            },
+            {
+              "defender": "D5",
+              "action": "switch",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O2がtopへ",
+          "defense": [
+            {
+              "defender": "D5",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D2",
+              "action": "recover",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "switch後O5がseal",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "deny",
+              "target": "O5"
+            },
+            {
+              "defender": "D5",
+              "action": "recover",
+              "target": "O2"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "switch時のO5 mismatchは資料に明記。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/SidelinePlays.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "SLOB-02",
+      "name": "Box-1",
+      "category": "SLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O1",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D1",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O4・O5がO2・O3へdown-screen",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "lock_and_trail",
+              "target": "O2",
+              "screen_by": "O4"
+            },
+            {
+              "defender": "D3",
+              "action": "lock_and_trail",
+              "target": "O3",
+              "screen_by": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O2・O3が外へ",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D3",
+              "action": "closeout",
+              "target": "O3"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O3がinbound",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "closeout",
+              "target": "O3"
+            },
+            {
+              "defender": "D2",
+              "action": "stay_in_matchup",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O5がO1へback-screen",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "screen_avoid_under",
+              "target": "O1",
+              "screen_by": "O5",
+              "method": "under"
+            },
+            {
+              "defender": "D5",
+              "action": "switch",
+              "target": "O1"
+            }
+          ]
+        },
+        {
+          "offense_step": 5,
+          "trigger": "O1がringへ",
+          "defense": [
+            {
+              "defender": "D5",
+              "action": "deny",
+              "target": "O1"
+            },
+            {
+              "defender": "D1",
+              "action": "recover",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 6,
+          "trigger": "O3→O1",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "adjust_to_ball",
+              "target": "O3"
+            },
+            {
+              "defender": "D5",
+              "action": "closeout",
+              "target": "O1"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "O1へのback-screenを主な守備学習点とする。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/SidelinePlays.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "SLOB-03",
+      "name": "Box-2",
+      "category": "SLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O3",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D3",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O2がO1へdown-screen",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "lock_and_trail",
+              "target": "O1",
+              "screen_by": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O2がO5・O4のstaggered screen",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "lock_and_trail",
+              "target": "O2",
+              "screen_by": "O5,O4"
+            },
+            {
+              "defender": "D4",
+              "action": "stay_in_matchup",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "stay_in_matchup",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O2がshooter位置へ",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O2→O4 post",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "deny",
+              "target": "O4"
+            },
+            {
+              "defender": "D2",
+              "action": "recover",
+              "target": "O2"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "資料はman-to-man専用の守備法を固定していないため、スクリーン原則からのモデル。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/SidelinePlays.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+        "https://www.coachesclipboard.net/M2MDefense2.html"
+      ]
+    },
+    {
+      "tactic_id": "SLOB-04",
+      "name": "Circle",
+      "category": "SLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O3",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D3",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O2がO4・O5のdouble-screenをcurl",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "lock_and_trail",
+              "target": "O2",
+              "screen_by": "O4,O5"
+            },
+            {
+              "defender": "D4",
+              "action": "stay_in_matchup",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "stay_in_matchup",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O1が続きinbound",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "closeout",
+              "target": "O1"
+            },
+            {
+              "defender": "D3",
+              "action": "deny",
+              "target": "O3",
+              "note": "教材データ上の内部表現をアプリ既存action `deny` に統一。"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O3がcornerへ",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "closeout",
+              "target": "O3"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O5・O4がstaggered double-screen",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "switch",
+              "target": "O5"
+            },
+            {
+              "defender": "D5",
+              "action": "switch",
+              "target": "O2"
+            },
+            {
+              "defender": "D4",
+              "action": "recover",
+              "target": "O4"
+            }
+          ]
+        },
+        {
+          "offense_step": 5,
+          "trigger": "O2がscreenからshot/drive",
+          "defense": [
+            {
+              "defender": "D5",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D2",
+              "action": "recover",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 6,
+          "trigger": "switchならO5 slip",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "deny",
+              "target": "O5"
+            },
+            {
+              "defender": "D4",
+              "action": "recover",
+              "target": "O4"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "staggered screenのswitch→O5 slipは資料に明記。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/SidelinePlays.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "SLOB-05",
+      "name": "Pairs",
+      "category": "SLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O3",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D3",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O4がO2をscreen",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "lock_and_trail",
+              "target": "O2",
+              "screen_by": "O4"
+            },
+            {
+              "defender": "D4",
+              "action": "stay_in_matchup",
+              "target": "O4"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O2がover/underでcut",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "lock_and_trail",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O3がO2へlook",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "deny",
+              "target": "O2"
+            },
+            {
+              "defender": "D3",
+              "action": "stay_in_matchup",
+              "target": "O3"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O5がO1をscreen",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "lock_and_trail",
+              "target": "O1",
+              "screen_by": "O5"
+            },
+            {
+              "defender": "D5",
+              "action": "stay_in_matchup",
+              "target": "O5"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "資料にはswitch時のmismatchが明記。基本学習では追従モデル。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/SidelinePlays.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "SLOB-06",
+      "name": "Stack-2",
+      "category": "SLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O3",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D3",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O1がO2をscreen→replacement",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "lock_and_trail",
+              "target": "O2",
+              "screen_by": "O1"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O2がnear sidelineをcut",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "deny",
+              "target": "O2"
+            },
+            {
+              "defender": "D3",
+              "action": "deny",
+              "target": "O3",
+              "note": "教材データ上の内部表現をアプリ既存action `deny` に統一。"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O2がcornerへ",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "recover",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O5がO4をback-screen",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "screen_avoid_under",
+              "target": "O4",
+              "screen_by": "O5",
+              "method": "under"
+            },
+            {
+              "defender": "D5",
+              "action": "switch",
+              "target": "O4"
+            }
+          ]
+        },
+        {
+          "offense_step": 5,
+          "trigger": "O4がoppositeへcut",
+          "defense": [
+            {
+              "defender": "D5",
+              "action": "deny",
+              "target": "O4"
+            },
+            {
+              "defender": "D4",
+              "action": "recover",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 6,
+          "trigger": "O4 lob or O1/O5 safety",
+          "defense": [
+            {
+              "defender": "D5",
+              "action": "deny",
+              "target": "O4"
+            },
+            {
+              "defender": "D1",
+              "action": "closeout",
+              "target": "O1"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "stackのback-screenはstep-under/switchを教材モデル化。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/SidelinePlays.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html"
+      ]
+    },
+    {
+      "tactic_id": "SLOB-07",
+      "name": "Kansas",
+      "category": "SLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O3",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D3",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O1がinboundを受けdribble",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "closeout",
+              "target": "O1"
+            },
+            {
+              "defender": "D3",
+              "action": "deny",
+              "target": "O3",
+              "note": "教材データ上の内部表現をアプリ既存action `deny` に統一。"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O4がopposite cornerへ",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "recover",
+              "target": "O4"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O2がO5のscreenでcurl",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "lock_and_trail",
+              "target": "O2",
+              "screen_by": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O2 shot / O5 roll",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D5",
+              "action": "recover",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 5,
+          "trigger": "counter：O2がback-cut",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "deny",
+              "target": "O2"
+            },
+            {
+              "defender": "D5",
+              "action": "recover",
+              "target": "O5"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "curlを見せた後のback-cut counterは資料に明記。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/SidelinePlays.html",
+        "https://www.coachesclipboard.net/M2MDefense2.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "SLOB-08",
+      "name": "Celtics",
+      "category": "SLOB",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": "O3",
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": {
+        "defender": "D3",
+        "mode": "paint_denial_then_recover",
+        "note": "BLOB/SLOB開始時の教材モデル。公開資料にあるBLOBマンツーマン守備法を参考にしたもので、JBA公式の個別セット守備指定ではない。"
+      },
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "O4がO1をdown-screen",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "lock_and_trail",
+              "target": "O1",
+              "screen_by": "O4"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "O1がtopへ出てinbound",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "closeout",
+              "target": "O1"
+            },
+            {
+              "defender": "D3",
+              "action": "closeout",
+              "target": "O3"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "O4がpost/short corner",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "deny",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "help_position",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "O1 fake handoff drive",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "stay_in_matchup",
+              "target": "O1"
+            },
+            {
+              "defender": "D3",
+              "action": "deny",
+              "target": "O3"
+            }
+          ]
+        },
+        {
+          "offense_step": 5,
+          "trigger": "O1→O3 handoff + O5 screen",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "screen_avoid_over",
+              "target": "O3",
+              "screen_by": "O5",
+              "method": "over"
+            },
+            {
+              "defender": "D5",
+              "action": "help_position",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 6,
+          "trigger": "O1 left wingへ",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "recover",
+              "target": "O1"
+            },
+            {
+              "defender": "D3",
+              "action": "closeout",
+              "target": "O3"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "PnRの守り方は資料が固定していないため、overを教材モデルとして採用。"
+      ],
+      "sources": [
+        "https://www.coachesclipboard.net/SidelinePlays.html",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-manual-level-2-eng.pdf"
+      ]
+    },
+    {
+      "tactic_id": "HC-01",
+      "name": "5-Out Pass & Cut / Replacing the Cutter",
+      "category": "HALFCOURT",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": null,
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": null,
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "pass→ring cut",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "lock_and_trail",
+              "target": "O1"
+            },
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "fill",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "deny",
+              "target": "O1"
+            },
+            {
+              "defender": "D2",
+              "action": "adjust_to_ball",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "balance",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "adjust_to_ball",
+              "target": "O3"
+            },
+            {
+              "defender": "D4",
+              "action": "adjust_to_ball",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "adjust_to_ball",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "cutterがoutsideへ",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "recover",
+              "target": "O1"
+            },
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "5-Outは固定セットではなく、pass/cut/fillの原則として扱う。"
+      ],
+      "sources": [
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+        "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf"
+      ]
+    },
+    {
+      "tactic_id": "HC-02",
+      "name": "5-Out Purposeful Movement / Timing & Spacing",
+      "category": "HALFCOURT",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": null,
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": null,
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "top pass & cut",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "lock_and_trail",
+              "target": "O1"
+            },
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "cutterがFT line越え",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "deny",
+              "target": "O1"
+            },
+            {
+              "defender": "D2",
+              "action": "adjust_to_ball",
+              "target": "O2"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "正しいtimingでfill",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D3",
+              "action": "adjust_to_ball",
+              "target": "O3"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "spacing維持",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "recover",
+              "target": "O3"
+            },
+            {
+              "defender": "D4",
+              "action": "adjust_to_ball",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "adjust_to_ball",
+              "target": "O5"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "動作のタイミングと守備のball reactionを学ぶモデル。"
+      ],
+      "sources": [
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+        "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf"
+      ]
+    },
+    {
+      "tactic_id": "HC-03",
+      "name": "5-Out Pass & Screen Away",
+      "category": "HALFCOURT",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": null,
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": null,
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "wingへpass",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D1",
+              "action": "adjust_to_ball",
+              "target": "O1"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "passerがscreen away",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "lock_and_trail",
+              "target": "O3",
+              "screen_by": "O1"
+            },
+            {
+              "defender": "D1",
+              "action": "stay_in_matchup",
+              "target": "O1"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "screen user relocate/cut",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "closeout",
+              "target": "O3"
+            },
+            {
+              "defender": "D1",
+              "action": "recover",
+              "target": "O1"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "baseline screenへ展開",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "lock_and_trail",
+              "target": "O4",
+              "screen_by": "O1"
+            },
+            {
+              "defender": "D5",
+              "action": "recover",
+              "target": "O5"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "外側screenのlock-and-trailを基本モデルにする。"
+      ],
+      "sources": [
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+        "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf"
+      ]
+    },
+    {
+      "tactic_id": "HC-04",
+      "name": "5-Out Ball Reversal",
+      "category": "HALFCOURT",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": null,
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": null,
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "perimeter passでreversal",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D1",
+              "action": "adjust_to_ball",
+              "target": "O1"
+            },
+            {
+              "defender": "D3",
+              "action": "adjust_to_ball",
+              "target": "O3"
+            },
+            {
+              "defender": "D4",
+              "action": "adjust_to_ball",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "adjust_to_ball",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "players relocate",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "adjust_to_ball",
+              "target": "O1"
+            },
+            {
+              "defender": "D2",
+              "action": "recover",
+              "target": "O2"
+            },
+            {
+              "defender": "D3",
+              "action": "adjust_to_ball",
+              "target": "O3"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "defense shift",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "adjust_to_ball",
+              "target": "O4"
+            },
+            {
+              "defender": "D5",
+              "action": "adjust_to_ball",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "late defenderならdrive window",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D1",
+              "action": "recover",
+              "target": "O1"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "ball movementへの守備反応を学ぶモデル。"
+      ],
+      "sources": [
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+        "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf",
+        "https://www.coachesclipboard.net/M2MDefense2.html"
+      ]
+    },
+    {
+      "tactic_id": "HC-05",
+      "name": "UCLA Cut",
+      "category": "HALFCOURT",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": null,
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": null,
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "perimeter pass",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D1",
+              "action": "adjust_to_ball",
+              "target": "O1"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "passerがringへcut",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "lock_and_trail",
+              "target": "O1"
+            },
+            {
+              "defender": "D5",
+              "action": "help_position",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "high-post screen",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "screen_avoid_through",
+              "target": "O1",
+              "screen_by": "O5",
+              "method": "through"
+            },
+            {
+              "defender": "D5",
+              "action": "stay_in_matchup",
+              "target": "O5"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "no passならclear",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "recover",
+              "target": "O1"
+            },
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "UCLAは複数実装があるため、基本構造に対するモデル。"
+      ],
+      "sources": [
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+        "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf"
+      ]
+    },
+    {
+      "tactic_id": "HC-06",
+      "name": "Flex",
+      "category": "HALFCOURT",
+      "status": "teaching_model",
+      "verified": false,
+      "teacher_review_required": true,
+      "inbounder": null,
+      "matchup_start": {
+        "D1": "O1",
+        "D2": "O2",
+        "D3": "O3",
+        "D4": "O4",
+        "D5": "O5"
+      },
+      "inbounder_defense": null,
+      "steps": [
+        {
+          "offense_step": 1,
+          "trigger": "baseline back-screen",
+          "defense": [
+            {
+              "defender": "D3",
+              "action": "screen_avoid_under",
+              "target": "O3",
+              "screen_by": "O5",
+              "method": "under"
+            },
+            {
+              "defender": "D5",
+              "action": "switch",
+              "target": "O3"
+            }
+          ]
+        },
+        {
+          "offense_step": 2,
+          "trigger": "ball reversal",
+          "defense": [
+            {
+              "defender": "D1",
+              "action": "closeout",
+              "target": "O1"
+            },
+            {
+              "defender": "D2",
+              "action": "adjust_to_ball",
+              "target": "O2"
+            },
+            {
+              "defender": "D4",
+              "action": "adjust_to_ball",
+              "target": "O4"
+            }
+          ]
+        },
+        {
+          "offense_step": 3,
+          "trigger": "screen-the-screener",
+          "defense": [
+            {
+              "defender": "D4",
+              "action": "lock_and_trail",
+              "target": "O4",
+              "screen_by": "O1"
+            },
+            {
+              "defender": "D1",
+              "action": "stay_in_matchup",
+              "target": "O1"
+            }
+          ]
+        },
+        {
+          "offense_step": 4,
+          "trigger": "opposite sideも継続",
+          "defense": [
+            {
+              "defender": "D2",
+              "action": "closeout",
+              "target": "O2"
+            },
+            {
+              "defender": "D3",
+              "action": "recover",
+              "target": "O3"
+            },
+            {
+              "defender": "D5",
+              "action": "adjust_to_ball",
+              "target": "O5"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Flexはcontinuityとして扱い、1サイクルを表示する。"
+      ],
+      "sources": [
+        "https://assets.fiba.basketball/image/upload/documents-corporate-wabc-coaching-level-manuals-level-1-eng.pdf",
+        "https://www.japanbasketball.jp/wp-content/uploads/U15mandf_Leaflet_v5_20250401.pdf"
+      ]
+    }
+  ]
+}

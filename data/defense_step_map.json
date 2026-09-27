@@ -1,0 +1,405 @@
+{
+  "meta": {
+    "description": "教材用守備モデル（tactical_defense_models.json）の「資料STEP（source_step）」と「アプリSTEP（app_step）」の対応表。守備のアニメーションは app_step だけを使う。app_step がない資料STEPの守備は動かさない。",
+    "origin": "2026-09-26 時点の対応（資料STEP番号を src に持つアプリSTEPのうち最後のSTEP）をそのまま記録。教師が確認・修正できる。",
+    "animation_status": "motion_rule_only = 守備はボール移動に応じた原則のみで、具体的な守備座標は未登録（アニメーションしない）"
+  },
+  "tactics": {
+    "BLOB-01": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 1
+        },
+        {
+          "source_step": 2,
+          "app_step": 2
+        },
+        {
+          "source_step": 3,
+          "app_step": 3
+        },
+        {
+          "source_step": 4,
+          "app_step": 4
+        }
+      ]
+    },
+    "BLOB-02": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 2
+        },
+        {
+          "source_step": 2,
+          "app_step": 3
+        },
+        {
+          "source_step": 3,
+          "app_step": 5
+        },
+        {
+          "source_step": 4,
+          "app_step": 6
+        }
+      ]
+    },
+    "BLOB-03": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 2
+        },
+        {
+          "source_step": 2,
+          "app_step": 4
+        },
+        {
+          "source_step": 3,
+          "app_step": 5
+        },
+        {
+          "source_step": 4,
+          "app_step": 7
+        },
+        {
+          "source_step": 5,
+          "app_step": 9
+        },
+        {
+          "source_step": 6,
+          "app_step": 12
+        }
+      ]
+    },
+    "BLOB-04": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 2
+        },
+        {
+          "source_step": 2,
+          "app_step": 3
+        },
+        {
+          "source_step": 3,
+          "app_step": 4
+        },
+        {
+          "source_step": 4,
+          "app_step": 5
+        }
+      ]
+    },
+    "BLOB-05": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 1
+        },
+        {
+          "source_step": 2,
+          "app_step": 5
+        },
+        {
+          "source_step": 3,
+          "app_step": 6
+        },
+        {
+          "source_step": 4,
+          "app_step": 7
+        },
+        {
+          "source_step": 5,
+          "app_step": 8
+        }
+      ]
+    },
+    "BLOB-06": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 1
+        },
+        {
+          "source_step": 2,
+          "app_step": 2
+        },
+        {
+          "source_step": 3,
+          "app_step": 3
+        },
+        {
+          "source_step": 4,
+          "app_step": 5
+        },
+        {
+          "source_step": 5,
+          "app_step": 7
+        }
+      ]
+    },
+    "SLOB-01": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 2
+        },
+        {
+          "source_step": 2,
+          "app_step": 3
+        },
+        {
+          "source_step": 3,
+          "app_step": 4
+        },
+        {
+          "source_step": 4,
+          "app_step": 5
+        }
+      ]
+    },
+    "SLOB-02": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 1
+        },
+        {
+          "source_step": 2,
+          "app_step": 2
+        },
+        {
+          "source_step": 3,
+          "app_step": 3
+        },
+        {
+          "source_step": 4,
+          "app_step": 5
+        },
+        {
+          "source_step": 5,
+          "app_step": 6
+        },
+        {
+          "source_step": 6,
+          "app_step": 6
+        }
+      ]
+    },
+    "SLOB-04": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 1
+        },
+        {
+          "source_step": 2,
+          "app_step": 3
+        },
+        {
+          "source_step": 3,
+          "app_step": 4
+        },
+        {
+          "source_step": 4,
+          "app_step": 5
+        },
+        {
+          "source_step": 5,
+          "app_step": 6
+        },
+        {
+          "source_step": 6,
+          "app_step": 7
+        }
+      ]
+    },
+    "SLOB-05": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 1
+        },
+        {
+          "source_step": 2,
+          "app_step": 2
+        },
+        {
+          "source_step": 3,
+          "app_step": 2
+        },
+        {
+          "source_step": 4,
+          "app_step": 3
+        }
+      ]
+    },
+    "SLOB-06": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 3
+        },
+        {
+          "source_step": 2,
+          "app_step": 2
+        },
+        {
+          "source_step": 3,
+          "app_step": 4
+        },
+        {
+          "source_step": 4,
+          "app_step": 5
+        },
+        {
+          "source_step": 5,
+          "app_step": 6
+        },
+        {
+          "source_step": 6,
+          "app_step": 7
+        }
+      ]
+    },
+    "SLOB-07": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 3
+        },
+        {
+          "source_step": 2,
+          "app_step": 4
+        },
+        {
+          "source_step": 3,
+          "app_step": 6
+        },
+        {
+          "source_step": 4,
+          "app_step": 7
+        },
+        {
+          "source_step": 5,
+          "app_step": 8
+        }
+      ]
+    },
+    "SLOB-08": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 1
+        },
+        {
+          "source_step": 2,
+          "app_step": 3
+        },
+        {
+          "source_step": 3,
+          "app_step": 4
+        },
+        {
+          "source_step": 4,
+          "app_step": 7
+        },
+        {
+          "source_step": 5,
+          "app_step": 9
+        },
+        {
+          "source_step": 6,
+          "app_step": 12
+        }
+      ]
+    },
+    "HC-01": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 2
+        },
+        {
+          "source_step": 2,
+          "app_step": 3
+        },
+        {
+          "source_step": 3,
+          "app_step": 5
+        },
+        {
+          "source_step": 4,
+          "app_step": 5
+        }
+      ]
+    },
+    "HC-02": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 2
+        },
+        {
+          "source_step": 2,
+          "app_step": 3
+        },
+        {
+          "source_step": 3,
+          "app_step": 4
+        },
+        {
+          "source_step": 4,
+          "app_step": 5
+        }
+      ]
+    },
+    "HC-03": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 1
+        },
+        {
+          "source_step": 2,
+          "app_step": 2
+        },
+        {
+          "source_step": 3,
+          "app_step": 3
+        },
+        {
+          "source_step": 4,
+          "app_step": 4
+        }
+      ]
+    },
+    "HC-04": {
+      "animation_status": "motion_rule_only",
+      "note": "この戦術の守備は、ボール移動に応じた原則のみで、具体的な守備座標は未登録です。"
+    },
+    "HC-05": {
+      "steps": [
+        {
+          "source_step": 1,
+          "app_step": 1
+        },
+        {
+          "source_step": 2,
+          "app_step": 3
+        },
+        {
+          "source_step": 3,
+          "app_step": 2
+        },
+        {
+          "source_step": 4,
+          "app_step": 4
+        }
+      ]
+    }
+  }
+}
